@@ -83,3 +83,76 @@ theme(legend.title = element_blank())
 ```
 # This visualization aims to illustrate the amounts and trends of fiscal education spending in Chinese provinces with varying numbers of top universities. From the perspective of expenditure trends, the growth trend of education fiscal expenditure in provinces with two first-class universities are significantly better than that in other categories of provinces. In terms of quantity, the more top universities in the early stage, the more spending. In the later period, especially after 2007, the expenditures of provinces with two or three top universities began to overtake.
 
+#DV 3: Comparison of the distribution of educational resources in China
+
+```{r}
+library(readxl)
+library(ggplot2)
+library(openxlsx)
+graph3 <- read.xlsx("data/3.xlsx")
+ggplot(data = graph3)+
+  geom_rect(aes(fill=as.character(Region), 
+                ymax=PRmax, 
+                ymin=PRmin,
+                xmax=5, 
+                xmin=4))+
+  geom_text(aes(x=4.6,
+                y=(PRmax-PRmin)/2,
+                 label=paste0(round((PRmax-PRmin)*100,1),"%")),
+             position=position_fill(vjust=0.5), 
+            size=3)+
+  geom_rect(aes(fill=as.character(Region), 
+                ymax=MRmax, 
+                ymin=MRmin,
+                xmax=4,
+                xmin=3))+
+  geom_text(aes(x=3.6,
+                y=(MRmax-MRmin)/2,
+                label=paste0(round((MRmax-MRmin)*100,1),"%")),
+            position=position_fill(vjust=0.5), 
+            size=3)+
+  geom_rect(aes(fill=as.character(Region), 
+                ymax=HRmax, 
+                ymin=HRmin,
+                xmax=3, 
+                xmin=2))+
+  geom_text(aes(x = 2.6,
+                y=(HRmax-HRmin)/2,
+                 label=paste0(round((HRmax-HRmin)*100,1),"%")),
+            position=position_fill(vjust=0.5), 
+            size=3)+
+  geom_rect(aes(fill=as.character(Region),
+                ymax=NRmax, 
+                ymin=NRmin, 
+                xmax=2, 
+                xmin=1))+
+  geom_text(aes(x=1.6, 
+                y=(NRmax-NRmin)/2,
+                label=paste0(round((NRmax-NRmin)*100,1),"%")),
+            position=position_fill(vjust=0.5),
+            size=3) +
+  geom_rect(aes(fill=as.character(Region),
+                ymax=TRmax, 
+                ymin=TRmin, 
+                xmax=1, 
+                xmin=0)) +
+geom_text(aes(x= 0.6, 
+              y=(TRmax-TRmin)/2,
+              label =paste0(round((TRmax-TRmin)*100,1),"%")),
+          position=position_fill(vjust = 0.5), 
+          size = 2)+
+  theme(aspect.ratio=1)+
+  coord_polar(theta="y") +
+  theme(legend.title=element_blank(), 
+        axis.title=element_blank(),
+        axis.text.y=element_blank())+
+        labs(title = (paste("Comparison of the distribution of 
+educational resources in China")),
+        subtitle = paste("The proportion of the number of schools at all levels 
+in each province in the country"), 
+        caption = "Data: National Bureau of Statistics of China")
+```
+
+# This visualization divides China into six sections and divides education into five levels. We judge the development of Chinese education in different regions by observing the proportion of the number of schools at different levels.
+
+# From the results, the development of education in different regions of China is uneven. For example, the development of higher education in the north is significantly better than that of other regions, and the development of basic education in other regions is obviously better than its higher education.
