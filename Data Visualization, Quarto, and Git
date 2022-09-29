@@ -43,3 +43,43 @@ Growth")),
 
 # 2. From the point of view of marginal effects, having a moderate number of top universities (about two) produces the highest value-added of the three major industries. This shows that the Chinese government is considering ensuring that each province has one or two top universities, which will generate the greatest benefits.
 
+
+#DV 2: Amounts and Trends in Education Expenditure Growth in China's Provinces
+
+```{r}
+library(readxl)
+library (ggplot2)
+library(openxlsx)
+graph2 <- read.xlsx("data/2.xlsx")
+ggplot(data = graph2)+
+  geom_line(mapping = aes(x = Year,
+                          y=AEF/100000,
+                          color = as.character(NineEightFive)),
+            size=1)+
+  geom_point(mapping = aes(x = Year,
+                           y=AEF/100000,
+                           color = as.character (NineEightFive)))+
+  scale_color_manual(values=c("8"="#e41a1c",
+                              "4" ="#377eb8",
+                              "3" ="#4daf4a",
+                              "2"= "#984ea3",
+                              "1"= "#ff7f00",
+                              "0" = "#ffff33"),
+                     labels=c("8" = "Province with 8 top universities",
+                              "4" = "Province with 4 top universities",
+                              "3" = "Province with 3 top universities",
+                              "2" = "Province with 2 top universities",
+                              "1" = "Province with 1 top university",
+                              "0" = "Province with 0 top university"))+
+  scale_x_continuous(breaks = c(2001,2005,2009,2013,2017))+
+  labs(title =(paste("Amounts and Trends in Education Expenditure Growth 
+in China's Provinces")),
+       subtitle = paste("The number of institutions of higher learning determines 
+the amount and trend of government spending"),
+       caption = "'Data: National Bureau of Statistics of China",
+       x= "Year",
+       y= "Fiscal Average Education Expenditure (Billions)")+
+theme(legend.title = element_blank())
+```
+# This visualization aims to illustrate the amounts and trends of fiscal education spending in Chinese provinces with varying numbers of top universities. From the perspective of expenditure trends, the growth trend of education fiscal expenditure in provinces with two first-class universities are significantly better than that in other categories of provinces. In terms of quantity, the more top universities in the early stage, the more spending. In the later period, especially after 2007, the expenditures of provinces with two or three top universities began to overtake.
+
