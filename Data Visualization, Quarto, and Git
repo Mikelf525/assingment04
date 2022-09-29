@@ -156,3 +156,39 @@ in each province in the country"),
 # This visualization divides China into six sections and divides education into five levels. We judge the development of Chinese education in different regions by observing the proportion of the number of schools at different levels.
 
 # From the results, the development of education in different regions of China is uneven. For example, the development of higher education in the north is significantly better than that of other regions, and the development of basic education in other regions is obviously better than its higher education.
+
+
+#DV 4: The imbalance between the distribution of population and the number of top universities
+
+```{r}
+library (readxl)
+library(ggplot2)
+library(treemapify)
+library(openxlsx)
+graph4 <- read.xlsx("data/4.xlsx")
+ggplot(data=graph4
+       ,aes(area = population/100,
+        fill = NineEightFive,
+        label = province,
+        subgroup = R)) +
+  geom_treemap()+
+  geom_treemap_subgroup_border(color = "white")+
+  geom_treemap_text(fontface = "italic",
+                    color = "white",
+                    place = "center",
+                    grow = FALSE,
+                    reflow = TRUE)+
+  geom_treemap_subgroup_text(place ="center",
+                             grow = TRUE,
+                             alpha = 0.5,
+                             color = "gray98",
+                             min.size=0) +
+  labs(title = "The imbalance between the distribution of
+population and the number of top universities",
+  caption = "Data: National Bureaua of Statistics of China") +
+  scale_fill_gradient(low = "deepskyblue",
+                      high = "dark blue",
+                      name = "Number of top universities")
+```
+
+# This visualization shows the differences in the distribution of top universities and population distributions across provinces/regions in China. From the results, the distribution of China's top universities and the population show a different situation. Some populous provinces such as Henan do not have any top universities. However, Beijing, Shanghai and other places have only a small part of the population but have a large number of top university education resources in China.
