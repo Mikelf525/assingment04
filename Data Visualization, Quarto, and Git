@@ -1,1 +1,45 @@
+#Data Source for all four DV: https://data.stats.gov.cn
+
+#DV 1: The Impact of China's Top Universities on Provinces' Economic Growth
+
+```{r}
+library(readxl)
+library(ggplot2)
+library(openxlsx)
+graph1 <- read.xlsx("data/1.xlsx")
+ggplot(data = graph1) +
+  geom_boxplot(mapping = aes(x = as.character(NineEightFive),
+                             y= Increase,
+                             fill = as.character(Type),
+                             color = as.character(Type)),
+               alpha = 0.4,
+               width = 0.8) +
+  scale_fill_manual(values = c("1" = "#1b9e77",
+                               "2" = "#d95f02",
+                               "3" = "#7570b3"),
+                    labels = c("1" = "primary industry",
+                               "2" = "Secondary industry",
+                               "3" = "Tertiary Industry")) +
+  scale_color_manual(values = c("1" = "#1b9e77",
+                                "2" = "#d95f02",
+                                "3" = "#757063"),
+                     labels = c("1" = "primary industry",
+                                "2" = "Secondary industry",
+                                "3" = "Tertiary Industry")) +
+  labs(title = (paste("The Impact of China's Top Universities on Provinces'Economic
+Growth")),
+        subtitle = paste("Comparsion of the growth value of the three major Industries in 2019"),
+        caption = "Data: National Bureau of Statistics of China",
+        x = "Number of the top universities",
+        y = "Industrial growth value (RMB)")+
+  theme(legend.title = element_blank())
+```
+
+# This visualization shows the growth value of three industries in provinces with different numbers of top universities.
+
+# We can draw two interesting conclusions:
+
+# 1. With the increase in the number of top universities, the value added of the tertiary industry has the largest change, and the smallest is the primary industry.
+
+# 2. From the point of view of marginal effects, having a moderate number of top universities (about two) produces the highest value-added of the three major industries. This shows that the Chinese government is considering ensuring that each province has one or two top universities, which will generate the greatest benefits.
 
