@@ -151,10 +151,7 @@ in each province in the country"),
         caption = "Data: National Bureau of Statistics of China")
 ```
 
-# This visualization divides China into six sections and divides education into five levels. We judge the development of Chinese education in different regions by observing the proportion of the number of schools at different levels.
-
-# From the results, the development of education in different regions of China is uneven. For example, the development of higher education in the north is significantly better than that of other regions, and the development of basic education in other regions is obviously better than its higher education.
-
+#China is divided into six parts in this image, and there are five levels of education. By examining the ratio of schools at various levels, we may assess the progress of Chinese education in various locations. According to the findings, education progress in different parts of China is uneven. For instance, the north has developed higher education much more than other regions, and other regions have developed basic education clearly more than the north has.
 
 #DV 4: The imbalance between the distribution of population and the number of top universities
 
