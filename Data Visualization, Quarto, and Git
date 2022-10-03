@@ -79,7 +79,7 @@ the amount and trend of government spending"),
        y= "Fiscal Average Education Expenditure (Billions)")+
 theme(legend.title = element_blank())
 ```
-# This visualization aims to illustrate the amounts and trends of fiscal education spending in Chinese provinces with varying numbers of top universities. From the perspective of expenditure trends, the growth trend of education fiscal expenditure in provinces with two first-class universities are significantly better than that in other categories of provinces. In terms of quantity, the more top universities in the early stage, the more spending. In the later period, especially after 2007, the expenditures of provinces with two or three top universities began to overtake.
+#This graphic tries to show the fiscal education spending amounts and trends in Chinese provinces with various numbers of prestigious institutions. Fiscal spending on education in provinces with two top-tier universities is growing at a far faster rate than in other provincial types, according to expenditure statistics. Besides, the fiscal spending from the federal government is positively associated with the number of top universities at the early stage . The expenditures of provinces with two or three prestigious institutions started to catch up in the later period, especially after 2007.
 
 #DV 3: Comparison of the distribution of educational resources in China
 
