@@ -35,13 +35,11 @@ Growth")),
   theme(legend.title = element_blank())
 ```
 
-# This visualization shows the growth value of three industries in provinces with different numbers of top universities.
+#The growth rates of three industries in provinces with varying numbers of top universities are represented in this image. We can deduce two interesting findings:
 
-# We can draw two interesting conclusions:
+#1.The value added of the tertiary industry has changed the most as the number of top universities has increased, while the primary industry has changed the least.
 
-# 1. With the increase in the number of top universities, the value added of the tertiary industry has the largest change, and the smallest is the primary industry.
-
-# 2. From the point of view of marginal effects, having a moderate number of top universities (about two) produces the highest value-added of the three major industries. This shows that the Chinese government is considering ensuring that each province has one or two top universities, which will generate the greatest benefits.
+#2. From the perspective of marginal effects, the three main industries have the maximum value-added when there are only a small number of top universities (about two). This demonstrates that the Chinese government is thinking about ensuring that each province has one or two top universities because doing so will have the biggest positive effects.
 
 
 #DV 2: Amounts and Trends in Education Expenditure Growth in China's Provinces
